@@ -1,0 +1,74 @@
+# ninja log v5
+2	270	6619016618148685	C:/Users/tzinke/Documents/Learning Goals/Motion Control/EWARM/Motion Control/Obj/Application/User/Core/main.o	46a1491e89af7fce
+19	162	6592988275423993	C:/Users/tzinke/Documents/Learning Goals/Motion Control/EWARM/Motion Control/Obj/Application/EWARM/startup_stm32f411xe.o	c290cda52239e6a4
+547	1450	6617410382318116	C:/Users/tzinke/Documents/Learning Goals/Motion Control/EWARM/Motion Control/Obj/Application/User/Core/stm32f4xx_it.o	4d14538692bec97f
+1418	1788	6606090499518285	C:/Users/tzinke/Documents/Learning Goals/Motion Control/EWARM/Motion Control/Obj/Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_flash.o	a55c7aa27d270ab6
+552	1479	6617410382577786	C:/Users/tzinke/Documents/Learning Goals/Motion Control/EWARM/Motion Control/Obj/Application/User/Core/stm32f4xx_hal_msp.o	a8a4e1113b7c6a0f
+1152	1350	6606090495189757	C:/Users/tzinke/Documents/Learning Goals/Motion Control/EWARM/Motion Control/Obj/Drivers/CMSIS/system_stm32f4xx.o	1aadf6b9f5c57528
+1077	1385	6606090495508904	C:/Users/tzinke/Documents/Learning Goals/Motion Control/EWARM/Motion Control/Obj/Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal.o	b43ab9a5105d80a8
+28	1146	6606090493045487	C:/Users/tzinke/Documents/Learning Goals/Motion Control/EWARM/Motion Control/Obj/Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_cortex.o	3f45c1d11cc46393
+1357	1881	6606090500445708	C:/Users/tzinke/Documents/Learning Goals/Motion Control/EWARM/Motion Control/Obj/Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_dma_ex.o	bb80faa0fb65a7e8
+374	400	6619016619618885	C:/Users/tzinke/Documents/Learning Goals/Motion Control/EWARM/Motion Control/Exe/Motion Control.hex	7c587020104f7494
+964	1526	6606090496915133	C:/Users/tzinke/Documents/Learning Goals/Motion Control/EWARM/Motion Control/Obj/Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_dma.o	c02799b1b0ef416d
+1127	1412	6606090495638566	C:/Users/tzinke/Documents/Learning Goals/Motion Control/EWARM/Motion Control/Obj/Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_exti.o	d09e7e16f104b822
+1795	2127	6606090502919084	C:/Users/tzinke/Documents/Learning Goals/Motion Control/EWARM/Motion Control/Obj/Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_pwr_ex.o	5085d83710e9a9cc
+1393	1605	6606090497722972	C:/Users/tzinke/Documents/Learning Goals/Motion Control/EWARM/Motion Control/Obj/Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_flash_ramfunc.o	6452c0de0e374cf
+1531	1924	6606090500685050	C:/Users/tzinke/Documents/Learning Goals/Motion Control/EWARM/Motion Control/Obj/Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_flash_ex.o	21efb582255a1253
+2134	2604	6606090507686727	C:/Users/tzinke/Documents/Learning Goals/Motion Control/EWARM/Motion Control/Obj/Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_rcc.o	3f0e9bd6d81d870e
+1610	2008	6606090501702334	C:/Users/tzinke/Documents/Learning Goals/Motion Control/EWARM/Motion Control/Obj/Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_gpio.o	7c362be9780ed101
+1900	2188	6606090503517473	C:/Users/tzinke/Documents/Learning Goals/Motion Control/EWARM/Motion Control/Obj/Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_pwr.o	3fd31ef568e9ae86
+2195	2505	6606090506708937	C:/Users/tzinke/Documents/Learning Goals/Motion Control/EWARM/Motion Control/Obj/Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_rcc_ex.o	6e745f1b51f3dd10
+2510	3392	6606090515575470	C:/Users/tzinke/Documents/Learning Goals/Motion Control/EWARM/Motion Control/Obj/Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_tim_ex.o	d14d327a0334e9fa
+2016	3098	6606090512623124	C:/Users/tzinke/Documents/Learning Goals/Motion Control/EWARM/Motion Control/Obj/Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_uart.o	ae5a16e5b67e1236
+1932	3793	6606090519544980	C:/Users/tzinke/Documents/Learning Goals/Motion Control/EWARM/Motion Control/Obj/Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_tim.o	d53c64caaaf3a90
+278	356	6619016619150023	C:/Users/tzinke/Documents/Learning Goals/Motion Control/EWARM/Motion Control/Exe/Motion Control.out	bebbb2cec03c6e8e
+3557	3642	6592988310221525	C:/Users/tzinke/Documents/Learning Goals/Motion Control/EWARM/Motion Control/List/Motion Control.map	383128a02f1d790e
+2	784	6600783052973735	C:/Users/tzinke/Documents/Learning Goals/Motion Control/EWARM/Motion Control/Obj/Application/User/Core/x_nucleo_ihmxx.o	17450be432ce141b
+1	1111	6619851275160665	C:/Users/tzinke/Documents/Learning Goals/Motion Control/EWARM/Motion Control/Obj/Application/User/Core/main.o	46a1491e89af7fce
+1116	1375	6619851277857022	C:/Users/tzinke/Documents/Learning Goals/Motion Control/EWARM/Motion Control/Exe/Motion Control.out	bebbb2cec03c6e8e
+1396	1443	6619851278702876	C:/Users/tzinke/Documents/Learning Goals/Motion Control/EWARM/Motion Control/Exe/Motion Control.hex	7c587020104f7494
+1	291	6619852145657255	C:/Users/tzinke/Documents/Learning Goals/Motion Control/EWARM/Motion Control/Obj/Application/User/Core/main.o	46a1491e89af7fce
+298	375	6619852146500374	C:/Users/tzinke/Documents/Learning Goals/Motion Control/EWARM/Motion Control/Exe/Motion Control.out	bebbb2cec03c6e8e
+393	418	6619852146969062	C:/Users/tzinke/Documents/Learning Goals/Motion Control/EWARM/Motion Control/Exe/Motion Control.hex	7c587020104f7494
+2	271	6619855233421147	C:/Users/tzinke/Documents/Learning Goals/Motion Control/EWARM/Motion Control/Obj/Application/User/Core/main.o	46a1491e89af7fce
+277	366	6619855234423529	C:/Users/tzinke/Documents/Learning Goals/Motion Control/EWARM/Motion Control/Exe/Motion Control.out	bebbb2cec03c6e8e
+384	411	6619855234892232	C:/Users/tzinke/Documents/Learning Goals/Motion Control/EWARM/Motion Control/Exe/Motion Control.hex	7c587020104f7494
+1	273	6619857139680220	C:/Users/tzinke/Documents/Learning Goals/Motion Control/EWARM/Motion Control/Obj/Application/User/Core/main.o	46a1491e89af7fce
+278	361	6619857140534520	C:/Users/tzinke/Documents/Learning Goals/Motion Control/EWARM/Motion Control/Exe/Motion Control.out	bebbb2cec03c6e8e
+377	405	6619857141043305	C:/Users/tzinke/Documents/Learning Goals/Motion Control/EWARM/Motion Control/Exe/Motion Control.hex	7c587020104f7494
+2	611	6619866212289486	C:/Users/tzinke/Documents/Learning Goals/Motion Control/EWARM/Motion Control/Obj/Application/User/Core/main.o	46a1491e89af7fce
+618	695	6619866213094737	C:/Users/tzinke/Documents/Learning Goals/Motion Control/EWARM/Motion Control/Exe/Motion Control.out	bebbb2cec03c6e8e
+714	743	6619866213628538	C:/Users/tzinke/Documents/Learning Goals/Motion Control/EWARM/Motion Control/Exe/Motion Control.hex	7c587020104f7494
+1	289	6619866577154704	C:/Users/tzinke/Documents/Learning Goals/Motion Control/EWARM/Motion Control/Obj/Application/User/Core/main.o	46a1491e89af7fce
+295	372	6619866578001313	C:/Users/tzinke/Documents/Learning Goals/Motion Control/EWARM/Motion Control/Exe/Motion Control.out	bebbb2cec03c6e8e
+389	416	6619866578626269	C:/Users/tzinke/Documents/Learning Goals/Motion Control/EWARM/Motion Control/Exe/Motion Control.hex	7c587020104f7494
+1	278	6619867637742763	C:/Users/tzinke/Documents/Learning Goals/Motion Control/EWARM/Motion Control/Obj/Application/User/Core/main.o	46a1491e89af7fce
+284	363	6619867638652204	C:/Users/tzinke/Documents/Learning Goals/Motion Control/EWARM/Motion Control/Exe/Motion Control.out	bebbb2cec03c6e8e
+378	403	6619867639054744	C:/Users/tzinke/Documents/Learning Goals/Motion Control/EWARM/Motion Control/Exe/Motion Control.hex	7c587020104f7494
+1	294	6619867933477403	C:/Users/tzinke/Documents/Learning Goals/Motion Control/EWARM/Motion Control/Obj/Application/User/Core/main.o	46a1491e89af7fce
+299	376	6619867934258890	C:/Users/tzinke/Documents/Learning Goals/Motion Control/EWARM/Motion Control/Exe/Motion Control.out	bebbb2cec03c6e8e
+395	422	6619867934792603	C:/Users/tzinke/Documents/Learning Goals/Motion Control/EWARM/Motion Control/Exe/Motion Control.hex	7c587020104f7494
+2	292	6619868604100307	C:/Users/tzinke/Documents/Learning Goals/Motion Control/EWARM/Motion Control/Obj/Application/User/Core/main.o	46a1491e89af7fce
+298	376	6619868604850335	C:/Users/tzinke/Documents/Learning Goals/Motion Control/EWARM/Motion Control/Exe/Motion Control.out	bebbb2cec03c6e8e
+392	418	6619868605383838	C:/Users/tzinke/Documents/Learning Goals/Motion Control/EWARM/Motion Control/Exe/Motion Control.hex	7c587020104f7494
+3	599	6619869420852050	C:/Users/tzinke/Documents/Learning Goals/Motion Control/EWARM/Motion Control/Obj/Application/User/Core/main.o	46a1491e89af7fce
+605	683	6619869421711165	C:/Users/tzinke/Documents/Learning Goals/Motion Control/EWARM/Motion Control/Exe/Motion Control.out	bebbb2cec03c6e8e
+701	730	6619869422214649	C:/Users/tzinke/Documents/Learning Goals/Motion Control/EWARM/Motion Control/Exe/Motion Control.hex	7c587020104f7494
+3	278	6619869982699227	C:/Users/tzinke/Documents/Learning Goals/Motion Control/EWARM/Motion Control/Obj/Application/User/Core/main.o	46a1491e89af7fce
+284	363	6619869983532111	C:/Users/tzinke/Documents/Learning Goals/Motion Control/EWARM/Motion Control/Exe/Motion Control.out	bebbb2cec03c6e8e
+380	408	6619869984065924	C:/Users/tzinke/Documents/Learning Goals/Motion Control/EWARM/Motion Control/Exe/Motion Control.hex	7c587020104f7494
+2	278	6619871704333325	C:/Users/tzinke/Documents/Learning Goals/Motion Control/EWARM/Motion Control/Obj/Application/User/Core/main.o	46a1491e89af7fce
+284	365	6619871705180162	C:/Users/tzinke/Documents/Learning Goals/Motion Control/EWARM/Motion Control/Exe/Motion Control.out	bebbb2cec03c6e8e
+383	412	6619871705804673	C:/Users/tzinke/Documents/Learning Goals/Motion Control/EWARM/Motion Control/Exe/Motion Control.hex	7c587020104f7494
+2	611	6619872613334042	C:/Users/tzinke/Documents/Learning Goals/Motion Control/EWARM/Motion Control/Obj/Application/User/Core/main.o	46a1491e89af7fce
+617	700	6619872614157421	C:/Users/tzinke/Documents/Learning Goals/Motion Control/EWARM/Motion Control/Exe/Motion Control.out	bebbb2cec03c6e8e
+720	746	6619872614646797	C:/Users/tzinke/Documents/Learning Goals/Motion Control/EWARM/Motion Control/Exe/Motion Control.hex	7c587020104f7494
+2	284	6619873730053424	C:/Users/tzinke/Documents/Learning Goals/Motion Control/EWARM/Motion Control/Obj/Application/User/Core/main.o	46a1491e89af7fce
+290	369	6619873730899025	C:/Users/tzinke/Documents/Learning Goals/Motion Control/EWARM/Motion Control/Exe/Motion Control.out	bebbb2cec03c6e8e
+385	411	6619873731367678	C:/Users/tzinke/Documents/Learning Goals/Motion Control/EWARM/Motion Control/Exe/Motion Control.hex	7c587020104f7494
+3	290	6619874136350774	C:/Users/tzinke/Documents/Learning Goals/Motion Control/EWARM/Motion Control/Obj/Application/User/Core/main.o	46a1491e89af7fce
+296	371	6619874137168493	C:/Users/tzinke/Documents/Learning Goals/Motion Control/EWARM/Motion Control/Exe/Motion Control.out	bebbb2cec03c6e8e
+389	414	6619874137530980	C:/Users/tzinke/Documents/Learning Goals/Motion Control/EWARM/Motion Control/Exe/Motion Control.hex	7c587020104f7494
+3	287	6619874917371749	C:/Users/tzinke/Documents/Learning Goals/Motion Control/EWARM/Motion Control/Obj/Application/User/Core/main.o	46a1491e89af7fce
+293	374	6619874918278526	C:/Users/tzinke/Documents/Learning Goals/Motion Control/EWARM/Motion Control/Exe/Motion Control.out	bebbb2cec03c6e8e
+389	414	6619874918686359	C:/Users/tzinke/Documents/Learning Goals/Motion Control/EWARM/Motion Control/Exe/Motion Control.hex	7c587020104f7494

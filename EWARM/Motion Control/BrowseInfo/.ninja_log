@@ -1,0 +1,105 @@
+# ninja log v5
+1	1184	6588933100000000	C:/Users/tzinke/Documents/Learning Goals/Motion Control/EWARM/Motion Control/BrowseInfo/Application/User/Core/stm32f4xx_hal_msp.xcl	3e622205d4685074
+1806	2090	6606090017072743	C:/Users/tzinke/Documents/Learning Goals/Motion Control/EWARM/Motion Control/BrowseInfo/Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_rcc.pbi	b5a46db8c5d98c4
+1395	1539	6588933100000000	C:/Users/tzinke/Documents/Learning Goals/Motion Control/EWARM/Motion Control/BrowseInfo/Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_dma_ex.xcl	603311a90f69ae69
+46	1245	6588933100000000	C:/Users/tzinke/Documents/Learning Goals/Motion Control/EWARM/Motion Control/BrowseInfo/Application/User/Core/stm32f4xx_it.xcl	83dcc1b00229d6d8
+1376	1516	6588933100000000	C:/Users/tzinke/Documents/Learning Goals/Motion Control/EWARM/Motion Control/BrowseInfo/Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_cortex.xcl	20b78c6ba0b4082c
+39	1201	6588933100000000	C:/Users/tzinke/Documents/Learning Goals/Motion Control/EWARM/Motion Control/BrowseInfo/Drivers/CMSIS/system_stm32f4xx.xcl	d73de6f62ac6dcce
+26	296	6607022623353657	C:/Users/tzinke/Documents/Learning Goals/Motion Control/EWARM/Motion Control/BrowseInfo/Motion Control_part3.pbi	f4c4ef66d2f497fc
+33	1223	6588933100000000	C:/Users/tzinke/Documents/Learning Goals/Motion Control/EWARM/Motion Control/BrowseInfo/Application/User/Core/main.xcl	e756e616c36af091
+1230	1367	6588933100000000	C:/Users/tzinke/Documents/Learning Goals/Motion Control/EWARM/Motion Control/BrowseInfo/Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_rcc_ex.xcl	63060d43de4b9785
+1630	1763	6588933100000000	C:/Users/tzinke/Documents/Learning Goals/Motion Control/EWARM/Motion Control/BrowseInfo/Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_pwr.xcl	969477cdb181db
+1190	1326	6588933100000000	C:/Users/tzinke/Documents/Learning Goals/Motion Control/EWARM/Motion Control/BrowseInfo/Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal.xcl	f3e74177d3987de7
+1253	1386	6588933100000000	C:/Users/tzinke/Documents/Learning Goals/Motion Control/EWARM/Motion Control/BrowseInfo/Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_flash_ex.xcl	158cd4085ba96825
+828	1172	6606090007887324	C:/Users/tzinke/Documents/Learning Goals/Motion Control/EWARM/Motion Control/BrowseInfo/Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_flash.pbi	8245c90ca2b984f
+1208	1343	6588933100000000	C:/Users/tzinke/Documents/Learning Goals/Motion Control/EWARM/Motion Control/BrowseInfo/Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_flash.xcl	3450a33bb2bac53c
+1334	1473	6588933100000000	C:/Users/tzinke/Documents/Learning Goals/Motion Control/EWARM/Motion Control/BrowseInfo/Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_dma.xcl	536d95d7870f6b4
+1351	1490	6588933100000000	C:/Users/tzinke/Documents/Learning Goals/Motion Control/EWARM/Motion Control/BrowseInfo/Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_exti.xcl	b5a245dbe09739be
+1699	1824	6588933100000000	C:/Users/tzinke/Documents/Learning Goals/Motion Control/EWARM/Motion Control/BrowseInfo/Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_tim_ex.xcl	ad1268b1444aaa60
+1482	1621	6588933100000000	C:/Users/tzinke/Documents/Learning Goals/Motion Control/EWARM/Motion Control/BrowseInfo/Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_rcc.xcl	15e885f6179bd050
+1500	1640	6588933100000000	C:/Users/tzinke/Documents/Learning Goals/Motion Control/EWARM/Motion Control/BrowseInfo/Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_gpio.xcl	44390adf7101ae88
+1525	1674	6588933100000000	C:/Users/tzinke/Documents/Learning Goals/Motion Control/EWARM/Motion Control/BrowseInfo/Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_pwr_ex.xcl	809e0744d2ce39fb
+39	279	6612919762336226	C:/Users/tzinke/Documents/Learning Goals/Motion Control/EWARM/Motion Control/BrowseInfo/Application/User/Core/stm32f4xx_it.pbi	e5460401b89a36e2
+1548	1691	6588933100000000	C:/Users/tzinke/Documents/Learning Goals/Motion Control/EWARM/Motion Control/BrowseInfo/Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_flash_ramfunc.xcl	174c0c9345c24b74
+1771	1905	6588933100000000	C:/Users/tzinke/Documents/Learning Goals/Motion Control/EWARM/Motion Control/BrowseInfo/Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_tim.xcl	5764282cd03b4127
+1832	1973	6588933100000000	C:/Users/tzinke/Documents/Learning Goals/Motion Control/EWARM/Motion Control/BrowseInfo/Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_uart.xcl	5546a1255ba09c94
+23	503	6606090000935920	C:/Users/tzinke/Documents/Learning Goals/Motion Control/EWARM/Motion Control/BrowseInfo/Drivers/CMSIS/system_stm32f4xx.pbi	ba76067f251d5c51
+43	283	6612919762492491	C:/Users/tzinke/Documents/Learning Goals/Motion Control/EWARM/Motion Control/BrowseInfo/Application/User/Core/stm32f4xx_hal_msp.pbi	60307f3f523fee14
+211	431	6619869383145284	C:/Users/tzinke/Documents/Learning Goals/Motion Control/EWARM/Motion Control/BrowseInfo/Motion Control_part0.pbi	e89eada2f91e2674
+13	309	6607022623493284	C:/Users/tzinke/Documents/Learning Goals/Motion Control/EWARM/Motion Control/BrowseInfo/Motion Control_part1.pbi	6c1ff1d2192d59e3
+2	208	6619869380986194	C:/Users/tzinke/Documents/Learning Goals/Motion Control/EWARM/Motion Control/BrowseInfo/Application/User/Core/main.pbi	5079a7b7f1fbb4bf
+907	1275	6606090008854738	C:/Users/tzinke/Documents/Learning Goals/Motion Control/EWARM/Motion Control/BrowseInfo/Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_exti.pbi	d31babcb93e1e46b
+279	537	6607022625767453	C:/Users/tzinke/Documents/Learning Goals/Motion Control/EWARM/Motion Control/BrowseInfo/Motion Control_part4.pbi	2bf1f44cc4051689
+495	919	6606090005354091	C:/Users/tzinke/Documents/Learning Goals/Motion Control/EWARM/Motion Control/BrowseInfo/Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_dma.pbi	31cd6c277eb4e0e
+1628	1967	6606090015836054	C:/Users/tzinke/Documents/Learning Goals/Motion Control/EWARM/Motion Control/BrowseInfo/Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_tim.pbi	76b1dc782e4d03b3
+438	825	6606090004137350	C:/Users/tzinke/Documents/Learning Goals/Motion Control/EWARM/Motion Control/BrowseInfo/Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_cortex.pbi	ac48450ab41f4096
+507	841	6606090004566362	C:/Users/tzinke/Documents/Learning Goals/Motion Control/EWARM/Motion Control/BrowseInfo/Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal.pbi	fc0722850f1aec51
+4	491	6606090001047058	C:/Users/tzinke/Documents/Learning Goals/Motion Control/EWARM/Motion Control/BrowseInfo/Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_dma_ex.pbi	579e9a189f87afda
+1278	1625	6606090012425178	C:/Users/tzinke/Documents/Learning Goals/Motion Control/EWARM/Motion Control/BrowseInfo/Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_tim_ex.pbi	99977339f8c10a4a
+922	1265	6606090008814838	C:/Users/tzinke/Documents/Learning Goals/Motion Control/EWARM/Motion Control/BrowseInfo/Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_flash_ramfunc.pbi	5afc4784a1c5b72a
+1270	1580	6606090011976378	C:/Users/tzinke/Documents/Learning Goals/Motion Control/EWARM/Motion Control/BrowseInfo/Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_flash_ex.pbi	f1a1d6a3e3dd64d
+1175	1532	6606090011407897	C:/Users/tzinke/Documents/Learning Goals/Motion Control/EWARM/Motion Control/BrowseInfo/Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_gpio.pbi	c2f5f31026423169
+845	1198	6606090008146626	C:/Users/tzinke/Documents/Learning Goals/Motion Control/EWARM/Motion Control/BrowseInfo/Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_pwr_ex.pbi	44d912f42a38846f
+2	134	6600779810000000	C:/Users/tzinke/Documents/Learning Goals/Motion Control/EWARM/Motion Control/BrowseInfo/Application/User/Core/x_nucleo_ihm06a1_stm32f4xx.xcl	c432f0f2e2b38fac
+1527	1803	6606090014210401	C:/Users/tzinke/Documents/Learning Goals/Motion Control/EWARM/Motion Control/BrowseInfo/Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_rcc_ex.pbi	1c10d99cb2303e29
+641	1909	6619869074413087	C:/Users/tzinke/Documents/Learning Goals/Motion Control/EWARM/Motion Control/BrowseInfo/Motion Control.pbw	9f0665e5efe43613
+1202	1524	6606090011397935	C:/Users/tzinke/Documents/Learning Goals/Motion Control/EWARM/Motion Control/BrowseInfo/Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_pwr.pbi	24797b972a3f02c7
+22	291	6607022623303791	C:/Users/tzinke/Documents/Learning Goals/Motion Control/EWARM/Motion Control/BrowseInfo/Motion Control_part2.pbi	30d54c04e6973f2c
+1535	1831	6606090014489658	C:/Users/tzinke/Documents/Learning Goals/Motion Control/EWARM/Motion Control/BrowseInfo/Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_uart.pbi	277b25265ec3fa1d
+437	660	6619869385459655	C:/Users/tzinke/Documents/Learning Goals/Motion Control/EWARM/Motion Control/BrowseInfo/Motion Control.pbd	41462872878d8340
+27	147	6600779810000000	C:/Users/tzinke/Documents/Learning Goals/Motion Control/EWARM/Motion Control/BrowseInfo/Application/User/Core/x_nucleo_ihmxx.xcl	d48845e59e92c04f
+141	229	6600779812731039	C:/Users/tzinke/Documents/Learning Goals/Motion Control/EWARM/Motion Control/BrowseInfo/Application/User/Core/x_nucleo_ihm06a1_stm32f4xx.pbi	918435710f4f3c19
+155	238	6600779812780905	C:/Users/tzinke/Documents/Learning Goals/Motion Control/EWARM/Motion Control/BrowseInfo/Application/User/Core/x_nucleo_ihmxx.pbi	7cfd38d8cb255702
+3	1545	6619869456348940	C:/Users/tzinke/Documents/Learning Goals/Motion Control/EWARM/Motion Control/BrowseInfo/Motion Control.pbw	9f0665e5efe43613
+2	373	6619869966527189	C:/Users/tzinke/Documents/Learning Goals/Motion Control/EWARM/Motion Control/BrowseInfo/Application/User/Core/main.pbi	5079a7b7f1fbb4bf
+2	300	6619870021866214	C:/Users/tzinke/Documents/Learning Goals/Motion Control/EWARM/Motion Control/BrowseInfo/Motion Control_part0.pbi	e89eada2f91e2674
+306	648	6619870025321533	C:/Users/tzinke/Documents/Learning Goals/Motion Control/EWARM/Motion Control/BrowseInfo/Motion Control.pbd	41462872878d8340
+656	2062	6619870039131499	C:/Users/tzinke/Documents/Learning Goals/Motion Control/EWARM/Motion Control/BrowseInfo/Motion Control.pbw	9f0665e5efe43613
+3	191	6619871104763211	C:/Users/tzinke/Documents/Learning Goals/Motion Control/EWARM/Motion Control/BrowseInfo/Application/User/Core/main.pbi	5079a7b7f1fbb4bf
+193	424	6619871107080152	C:/Users/tzinke/Documents/Learning Goals/Motion Control/EWARM/Motion Control/BrowseInfo/Motion Control_part0.pbi	e89eada2f91e2674
+428	654	6619871109484122	C:/Users/tzinke/Documents/Learning Goals/Motion Control/EWARM/Motion Control/BrowseInfo/Motion Control.pbd	41462872878d8340
+660	1955	6619871122020351	C:/Users/tzinke/Documents/Learning Goals/Motion Control/EWARM/Motion Control/BrowseInfo/Motion Control.pbw	9f0665e5efe43613
+2	198	6619871175522557	C:/Users/tzinke/Documents/Learning Goals/Motion Control/EWARM/Motion Control/BrowseInfo/Application/User/Core/main.pbi	5079a7b7f1fbb4bf
+201	394	6619871177528621	C:/Users/tzinke/Documents/Learning Goals/Motion Control/EWARM/Motion Control/BrowseInfo/Motion Control_part0.pbi	e89eada2f91e2674
+398	625	6619871179829591	C:/Users/tzinke/Documents/Learning Goals/Motion Control/EWARM/Motion Control/BrowseInfo/Motion Control.pbd	41462872878d8340
+629	1911	6619871192224852	C:/Users/tzinke/Documents/Learning Goals/Motion Control/EWARM/Motion Control/BrowseInfo/Motion Control.pbw	9f0665e5efe43613
+2	193	6619871348047987	C:/Users/tzinke/Documents/Learning Goals/Motion Control/EWARM/Motion Control/BrowseInfo/Application/User/Core/main.pbi	5079a7b7f1fbb4bf
+197	390	6619871350166979	C:/Users/tzinke/Documents/Learning Goals/Motion Control/EWARM/Motion Control/BrowseInfo/Motion Control_part0.pbi	e89eada2f91e2674
+394	614	6619871352353353	C:/Users/tzinke/Documents/Learning Goals/Motion Control/EWARM/Motion Control/BrowseInfo/Motion Control.pbd	41462872878d8340
+618	1898	6619871364844555	C:/Users/tzinke/Documents/Learning Goals/Motion Control/EWARM/Motion Control/BrowseInfo/Motion Control.pbw	9f0665e5efe43613
+2	191	6619871570058238	C:/Users/tzinke/Documents/Learning Goals/Motion Control/EWARM/Motion Control/BrowseInfo/Application/User/Core/main.pbi	5079a7b7f1fbb4bf
+195	392	6619871572061431	C:/Users/tzinke/Documents/Learning Goals/Motion Control/EWARM/Motion Control/BrowseInfo/Motion Control_part0.pbi	e89eada2f91e2674
+397	609	6619871574132820	C:/Users/tzinke/Documents/Learning Goals/Motion Control/EWARM/Motion Control/BrowseInfo/Motion Control.pbd	41462872878d8340
+614	1834	6619871586113753	C:/Users/tzinke/Documents/Learning Goals/Motion Control/EWARM/Motion Control/BrowseInfo/Motion Control.pbw	9f0665e5efe43613
+3	299	6619871741449995	C:/Users/tzinke/Documents/Learning Goals/Motion Control/EWARM/Motion Control/BrowseInfo/Application/User/Core/main.pbi	5079a7b7f1fbb4bf
+304	604	6619871744415274	C:/Users/tzinke/Documents/Learning Goals/Motion Control/EWARM/Motion Control/BrowseInfo/Motion Control_part0.pbi	e89eada2f91e2674
+607	935	6619871747713174	C:/Users/tzinke/Documents/Learning Goals/Motion Control/EWARM/Motion Control/BrowseInfo/Motion Control.pbd	41462872878d8340
+940	2425	6619871762314739	C:/Users/tzinke/Documents/Learning Goals/Motion Control/EWARM/Motion Control/BrowseInfo/Motion Control.pbw	9f0665e5efe43613
+3	201	6619872575167318	C:/Users/tzinke/Documents/Learning Goals/Motion Control/EWARM/Motion Control/BrowseInfo/Application/User/Core/main.pbi	5079a7b7f1fbb4bf
+205	421	6619872577365246	C:/Users/tzinke/Documents/Learning Goals/Motion Control/EWARM/Motion Control/BrowseInfo/Motion Control_part0.pbi	e89eada2f91e2674
+426	655	6619872579572438	C:/Users/tzinke/Documents/Learning Goals/Motion Control/EWARM/Motion Control/BrowseInfo/Motion Control.pbd	41462872878d8340
+4	1791	6619872661915865	C:/Users/tzinke/Documents/Learning Goals/Motion Control/EWARM/Motion Control/BrowseInfo/Motion Control.pbw	9f0665e5efe43613
+2	201	6619873322668440	C:/Users/tzinke/Documents/Learning Goals/Motion Control/EWARM/Motion Control/BrowseInfo/Application/User/Core/main.pbi	5079a7b7f1fbb4bf
+203	413	6619873324830025	C:/Users/tzinke/Documents/Learning Goals/Motion Control/EWARM/Motion Control/BrowseInfo/Motion Control_part0.pbi	e89eada2f91e2674
+419	628	6619873326988437	C:/Users/tzinke/Documents/Learning Goals/Motion Control/EWARM/Motion Control/BrowseInfo/Motion Control.pbd	41462872878d8340
+632	1956	6619873339873564	C:/Users/tzinke/Documents/Learning Goals/Motion Control/EWARM/Motion Control/BrowseInfo/Motion Control.pbw	9f0665e5efe43613
+2	206	6619873494782648	C:/Users/tzinke/Documents/Learning Goals/Motion Control/EWARM/Motion Control/BrowseInfo/Application/User/Core/main.pbi	5079a7b7f1fbb4bf
+209	424	6619873496943728	C:/Users/tzinke/Documents/Learning Goals/Motion Control/EWARM/Motion Control/BrowseInfo/Motion Control_part0.pbi	e89eada2f91e2674
+429	650	6619873499262356	C:/Users/tzinke/Documents/Learning Goals/Motion Control/EWARM/Motion Control/BrowseInfo/Motion Control.pbd	41462872878d8340
+656	1922	6619873511651709	C:/Users/tzinke/Documents/Learning Goals/Motion Control/EWARM/Motion Control/BrowseInfo/Motion Control.pbw	9f0665e5efe43613
+3	320	6619874175863655	C:/Users/tzinke/Documents/Learning Goals/Motion Control/EWARM/Motion Control/BrowseInfo/Application/User/Core/main.pbi	5079a7b7f1fbb4bf
+323	610	6619874178767506	C:/Users/tzinke/Documents/Learning Goals/Motion Control/EWARM/Motion Control/BrowseInfo/Motion Control_part0.pbi	e89eada2f91e2674
+619	922	6619874181944452	C:/Users/tzinke/Documents/Learning Goals/Motion Control/EWARM/Motion Control/BrowseInfo/Motion Control.pbd	41462872878d8340
+926	2254	6619874194739048	C:/Users/tzinke/Documents/Learning Goals/Motion Control/EWARM/Motion Control/BrowseInfo/Motion Control.pbw	9f0665e5efe43613
+2	185	6619874702652002	C:/Users/tzinke/Documents/Learning Goals/Motion Control/EWARM/Motion Control/BrowseInfo/Application/User/Core/main.pbi	5079a7b7f1fbb4bf
+189	382	6619874704673335	C:/Users/tzinke/Documents/Learning Goals/Motion Control/EWARM/Motion Control/BrowseInfo/Motion Control_part0.pbi	e89eada2f91e2674
+387	606	6619874706859550	C:/Users/tzinke/Documents/Learning Goals/Motion Control/EWARM/Motion Control/BrowseInfo/Motion Control.pbd	41462872878d8340
+611	1869	6619874719041591	C:/Users/tzinke/Documents/Learning Goals/Motion Control/EWARM/Motion Control/BrowseInfo/Motion Control.pbw	9f0665e5efe43613
+4	219	6619874823374919	C:/Users/tzinke/Documents/Learning Goals/Motion Control/EWARM/Motion Control/BrowseInfo/Application/User/Core/main.pbi	5079a7b7f1fbb4bf
+222	414	6619874825339979	C:/Users/tzinke/Documents/Learning Goals/Motion Control/EWARM/Motion Control/BrowseInfo/Motion Control_part0.pbi	e89eada2f91e2674
+420	638	6619874827563941	C:/Users/tzinke/Documents/Learning Goals/Motion Control/EWARM/Motion Control/BrowseInfo/Motion Control.pbd	41462872878d8340
+644	1924	6619874839894888	C:/Users/tzinke/Documents/Learning Goals/Motion Control/EWARM/Motion Control/BrowseInfo/Motion Control.pbw	9f0665e5efe43613
+2	194	6619874893446654	C:/Users/tzinke/Documents/Learning Goals/Motion Control/EWARM/Motion Control/BrowseInfo/Application/User/Core/main.pbi	5079a7b7f1fbb4bf
+198	400	6619874895623284	C:/Users/tzinke/Documents/Learning Goals/Motion Control/EWARM/Motion Control/BrowseInfo/Motion Control_part0.pbi	e89eada2f91e2674
+405	669	6619874898258559	C:/Users/tzinke/Documents/Learning Goals/Motion Control/EWARM/Motion Control/BrowseInfo/Motion Control.pbd	41462872878d8340
+4	1628	6619874968966117	C:/Users/tzinke/Documents/Learning Goals/Motion Control/EWARM/Motion Control/BrowseInfo/Motion Control.pbw	9f0665e5efe43613
