@@ -23,9 +23,17 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #define TIM2PSC  19999  // SysClk 84MHz; 20000 PSC == 4.2KHz
-#define STEPPERIOD      2
+#define STEPPERIOD      100
 #define TEMPSPEEDSCALER 6300
 #define PHASEDIV        20
+
+#define TIM2ARRaddr *(uint32_t *) 0x4000002C
+
+const float bellCurve[] = { 0, 0.0398, 0.0793, 0.1179, 0.1554, 0.1915, 0.2257, 0.258, 0.2881, 0.3159, 0.3413,
+                      0.3643, 0.3849, 0.4032, 0.4192, 0.4332, 0.4452, 0.4554, 0.4641, 0.4713, 0.4772,
+                      0.4821, 0.4861, 0.4893, 0.4918, 0.4938, 0.4953, 0.4965, 0.4974, 0.4981, 0.4987 };
+
+const uint32_t PWMTable[] = {50, 100, 200, 400, 800, 1600, 3200, 6400, 12800, 25600, 51200};
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -44,6 +52,7 @@
 
 /* Private variables ---------------------------------------------------------*/
 TIM_HandleTypeDef htim2;
+TIM_HandleTypeDef htim3;
 
 UART_HandleTypeDef huart2;
 
@@ -60,6 +69,7 @@ void SystemClock_Config(void);
 static void MX_GPIO_Init(void);
 static void MX_TIM2_Init(void);
 static void MX_USART2_UART_Init(void);
+static void MX_TIM3_Init(void);
 /* USER CODE BEGIN PFP */
 void init_mode_values();
 /* USER CODE END PFP */
@@ -98,10 +108,12 @@ int main(void)
   MX_GPIO_Init();
   MX_TIM2_Init();
   MX_USART2_UART_Init();
+  MX_TIM3_Init();
   /* USER CODE BEGIN 2 */
   init_mode_values();
   HAL_TIM_Base_Start_IT(&htim2);
-
+  HAL_TIM_Base_Start_IT(&htim3);
+  HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_2);
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -175,14 +187,15 @@ static void MX_TIM2_Init(void)
 
   TIM_ClockConfigTypeDef sClockSourceConfig = {0};
   TIM_MasterConfigTypeDef sMasterConfig = {0};
+  TIM_OC_InitTypeDef sConfigOC = {0};
 
   /* USER CODE BEGIN TIM2_Init 1 */
 
   /* USER CODE END TIM2_Init 1 */
   htim2.Instance = TIM2;
-  htim2.Init.Prescaler = TIM2PSC;
+  htim2.Init.Prescaler = TIM2PSC;//1343;
   htim2.Init.CounterMode = TIM_COUNTERMODE_UP;
-  htim2.Init.Period = STEPPERIOD;
+  htim2.Init.Period = 50;
   htim2.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
   htim2.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
   if (HAL_TIM_Base_Init(&htim2) != HAL_OK)
@@ -194,15 +207,73 @@ static void MX_TIM2_Init(void)
   {
     Error_Handler();
   }
+  if (HAL_TIM_PWM_Init(&htim2) != HAL_OK)
+  {
+    Error_Handler();
+  }
   sMasterConfig.MasterOutputTrigger = TIM_TRGO_RESET;
   sMasterConfig.MasterSlaveMode = TIM_MASTERSLAVEMODE_DISABLE;
   if (HAL_TIMEx_MasterConfigSynchronization(&htim2, &sMasterConfig) != HAL_OK)
   {
     Error_Handler();
   }
+  sConfigOC.OCMode = TIM_OCMODE_PWM1;
+  sConfigOC.Pulse = 5;//STEPPERIOD / 2;
+  sConfigOC.OCPolarity = TIM_OCPOLARITY_HIGH;
+  sConfigOC.OCFastMode = TIM_OCFAST_DISABLE;
+  if (HAL_TIM_PWM_ConfigChannel(&htim2, &sConfigOC, TIM_CHANNEL_2) != HAL_OK)
+  {
+    Error_Handler();
+  }
   /* USER CODE BEGIN TIM2_Init 2 */
 
   /* USER CODE END TIM2_Init 2 */
+  HAL_TIM_MspPostInit(&htim2);
+
+}
+
+/**
+  * @brief TIM3 Initialization Function
+  * @param None
+  * @retval None
+  */
+static void MX_TIM3_Init(void)
+{
+
+  /* USER CODE BEGIN TIM3_Init 0 */
+
+  /* USER CODE END TIM3_Init 0 */
+
+  TIM_ClockConfigTypeDef sClockSourceConfig = {0};
+  TIM_MasterConfigTypeDef sMasterConfig = {0};
+
+  /* USER CODE BEGIN TIM3_Init 1 */
+
+  /* USER CODE END TIM3_Init 1 */
+  htim3.Instance = TIM3;
+  htim3.Init.Prescaler = 1343;
+  htim3.Init.CounterMode = TIM_COUNTERMODE_UP;
+  htim3.Init.Period = 3124;
+  htim3.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
+  htim3.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
+  if (HAL_TIM_Base_Init(&htim3) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  sClockSourceConfig.ClockSource = TIM_CLOCKSOURCE_INTERNAL;
+  if (HAL_TIM_ConfigClockSource(&htim3, &sClockSourceConfig) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  sMasterConfig.MasterOutputTrigger = TIM_TRGO_RESET;
+  sMasterConfig.MasterSlaveMode = TIM_MASTERSLAVEMODE_DISABLE;
+  if (HAL_TIMEx_MasterConfigSynchronization(&htim3, &sMasterConfig) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  /* USER CODE BEGIN TIM3_Init 2 */
+
+  /* USER CODE END TIM3_Init 2 */
 
 }
 
@@ -255,8 +326,7 @@ static void MX_GPIO_Init(void)
   __HAL_RCC_GPIOB_CLK_ENABLE();
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOA, GRN_LED_Pin, GPIO_PIN_RESET);
-  HAL_GPIO_WritePin(GPIOA, DIR1_MODE4_Pin, GPIO_PIN_SET);
+  HAL_GPIO_WritePin(GPIOA, GRN_LED_Pin|DIR1_MODE4_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(REF_GPIO_Port, REF_Pin, GPIO_PIN_RESET);
@@ -265,7 +335,7 @@ static void MX_GPIO_Init(void)
   HAL_GPIO_WritePin(GPIOA, RST_Pin|ENABLE_Pin, GPIO_PIN_SET);
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOB, STCK_MODE3_Pin|MODE1_Pin|MODE2_Pin, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(GPIOB, MODE1_Pin|MODE2_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin : B1_Pin */
   GPIO_InitStruct.Pin = B1_Pin;
@@ -273,7 +343,7 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   HAL_GPIO_Init(B1_GPIO_Port, &GPIO_InitStruct);
 
-  /*Configure GPIO pins : GRN_LED_Pin_Pin DIR1_MODE4_Pin */
+  /*Configure GPIO pins : GRN_LED_Pin DIR1_MODE4_Pin */
   GPIO_InitStruct.Pin = GRN_LED_Pin|DIR1_MODE4_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
@@ -294,8 +364,8 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
 
-  /*Configure GPIO pins : STCK_MODE3_Pin MODE1_Pin MODE2_Pin */
-  GPIO_InitStruct.Pin = STCK_MODE3_Pin|MODE1_Pin|MODE2_Pin;
+  /*Configure GPIO pins : MODE1_Pin MODE2_Pin */
+  GPIO_InitStruct.Pin = MODE1_Pin|MODE2_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
@@ -304,222 +374,23 @@ static void MX_GPIO_Init(void)
 }
 
 /* USER CODE BEGIN 4 */
-uint16_t threeSecondsDivided = ((84000000 / (TIM2PSC + 1)) / (STEPPERIOD + 1)) * (3.0 / PHASEDIV);
-uint16_t dynamicScaler = PHASEDIV;
-uint8_t phase = 0; // 0 = ramp up; 1 = full speed; 2 = ramp down
-uint16_t timerCounter = 0;
-uint16_t phaseCounter = 0;
-uint32_t halfSteps = 0; //378 steps from 3s ramp-up; 2.1k steps from 3s full-speed; 377 steps from 3s ramp-down
-uint32_t inputRcvd = 2600;
+//volatile uint16_t PWMTableIndex = 0;
+uint16_t myPWMPer = 100;
 
+// Also need to change duty cycle probably
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef* htim)
-{
-    if(0 != inputRcvd)
+{  
+    static uint16_t PWMTableIndex = 0;
+    uint8_t currentInd = PWMTableIndex++ / 25;
+    
+    TIM2ARRaddr = myPWMPer;//PWMTable[currentInd];
+    
+    if(275 == PWMTableIndex)
     {
-        uint32_t halfStepsPerPhase = inputRcvd * 0.333333;
-        if(0 == phase) // Ramp up
-        {
-            if(++timerCounter >= dynamicScaler)
-            {
-                HAL_GPIO_TogglePin(GPIOB, STCK_MODE3_Pin);
-                halfSteps++;
-                
-                timerCounter = 0;
-            }
-            
-            if(++phaseCounter >= threeSecondsDivided)
-            {
-                phaseCounter = 0;
-                dynamicScaler--;
-            }
-            
-            if(0 == dynamicScaler)
-            {
-                phase = 1;
-            }
-            else if(halfSteps >= halfStepsPerPhase)
-            {
-                phase = 1;
-            }
-        }
-        else if(1 == phase) // Full Speed
-        {
-            if(++timerCounter >= dynamicScaler)
-            {
-                HAL_GPIO_TogglePin(GPIOB, STCK_MODE3_Pin);
-                halfSteps++;
-                
-                timerCounter = 0;
-            }
-            
-            if(halfSteps >= (2 * halfStepsPerPhase))
-            {
-                phaseCounter = 0;
-                dynamicScaler++;
-                phase = 2;
-            }
-        }
-        else if(2 == phase) // Ramp Down
-        {
-            if(++timerCounter >= dynamicScaler)
-            {
-                HAL_GPIO_TogglePin(GPIOB, STCK_MODE3_Pin);
-                halfSteps++;
-                
-                timerCounter = 0;
-            }
-            
-            if(++phaseCounter >= threeSecondsDivided)
-            {
-                phaseCounter = 0;
-                
-                if(dynamicScaler < PHASEDIV)
-                {
-                    dynamicScaler++;
-                }
-            }
-            
-            if(halfSteps >= inputRcvd)
-            {
-                HAL_GPIO_WritePin(GPIOA, RST_Pin, GPIO_PIN_RESET);
-                dynamicScaler = PHASEDIV;
-                phase = 3;
-            }
-        }
-        else if(3 == phase) // Idle
-        {
-            if(++phaseCounter >= threeSecondsDivided * PHASEDIV)
-            {
-                HAL_GPIO_WritePin(GPIOA, RST_Pin, GPIO_PIN_SET);
-                phaseCounter = 0;
-                phase = 0;
-                halfSteps = 0;
-                dynamicScaler = PHASEDIV;
-            }
-        }
+        PWMTableIndex = 0;
     }
-    else
-    {
-        halfSteps = 0;
-    }
-}
-
-void init_mode_values()
-{
-	mode_value[ONE_BY_256] = MODE_VALUE_ONE_BY_256;
-	mode_value[ONE_BY_128] = MODE_VALUE_ONE_BY_128;
-	mode_value[ONE_BY_64] = MODE_VALUE_ONE_BY_64;
-	mode_value[ONE_BY_32] = MODE_VALUE_ONE_BY_32;
-	mode_value[ONE_BY_16] = MODE_VALUE_ONE_BY_16;
-	mode_value[ONE_BY_8] = MODE_VALUE_ONE_BY_8;
-	mode_value[ONE_BY_4] = MODE_VALUE_ONE_BY_4;
-	mode_value[HALF_STEP] = MODE_VALUE_HALF_STEP;
-	mode_value[FULL_STEP] = MODE_VALUE_FULL_STEP;
-
-	phase = RAMP_UP;
-	step_index = ONE_BY_256;
-        
-        update_mode(MODE_VALUE_FULL_STEP);
-}
-
-void clear_modes()
-{
-	uint8_t value = 0X0;
-	HAL_GPIO_WritePin(GPIOB, STCK_MODE3_Pin, (value & MODE3_BIT_MASK));
-	HAL_GPIO_WritePin(GPIOA, DIR1_MODE4_Pin, (value & MODE4_BIT_MASK));
-	HAL_GPIO_WritePin(GPIOB, MODE1_Pin, (value & MODE1_BIT_MASK));
-	HAL_GPIO_WritePin(GPIOB, MODE2_Pin, (value & MODE2_BIT_MASK));
-}
-
-uint8_t val1 = 0x0b;
-uint8_t val2 = 0x0e;
-        
-void update_mode(uint8_t value)
-{
-	//clear_modes();
-        /*
-        if(value == 0)
-        {
-          value = val1;
-        }
-        else if(value = 1)
-        {
-          value = val2;
-        }
-        */
-        uint16_t i = 0;
-  
-	HAL_GPIO_WritePin(GPIOA, RST_Pin, GPIO_PIN_RESET);
-        while(i++ < 50000) ;
-        i = 0;
-	HAL_GPIO_WritePin(GPIOB, STCK_MODE3_Pin, (value & MODE3_BIT_MASK));
-	HAL_GPIO_WritePin(GPIOA, DIR1_MODE4_Pin, (value & MODE4_BIT_MASK));
-	HAL_GPIO_WritePin(GPIOB, MODE1_Pin, (value & MODE1_BIT_MASK));
-	HAL_GPIO_WritePin(GPIOB, MODE2_Pin, (value & MODE2_BIT_MASK));
-        while(i++ < 50000) ;
-	HAL_GPIO_WritePin(GPIOA, RST_Pin, GPIO_PIN_SET);
-        
-        HAL_GPIO_WritePin(GPIOA, DIR1_MODE4_Pin, GPIO_PIN_SET);
-}
-
-void init_step_index()
-{
-	if(phase == RAMP_UP)
-	{
-		step_index = ONE_BY_256;
-	}
-	if(phase == HOLD)
-	{
-		step_index = FULL_STEP;
-	}
-	if(phase == RAMP_DOWN)
-	{
-		step_index = HALF_STEP;
-	}
-}
-
-void microstep_motor()
-{
-	static uint8_t hold_counter;
-
-	if(phase == RAMP_UP)
-	{
-		if((step_index >= ONE_BY_256) && (step_index < FULL_STEP))
-		{
-			update_mode(mode_value[step_index]);
-			++step_index;
-		}
-		else
-		{
-			phase = HOLD;
-			hold_counter = 0;
-		}
-	}
-	if(phase == HOLD)
-	{
-		if((step_index == FULL_STEP) && (hold_counter <= step_index))
-		{
-			update_mode(mode_value[step_index]);
-			++hold_counter;
-		}
-		else
-		{
-			phase = RAMP_DOWN;
-		}
-	}
-	if(phase == RAMP_DOWN)
-	{
-		if((step_index <= FULL_STEP) && (step_index > ONE_BY_256))
-		{
-			update_mode(mode_value[step_index]);
-			--step_index;
-		}
-		else
-		{
-                  HAL_GPIO_WritePin(GPIOA, RST_Pin, 0);
-			phase = RAMP_UP;
-		}
-	}
+    
+    HAL_GPIO_TogglePin(GPIOA, GRN_LED_Pin);
 }
 
 /* USER CODE END 4 */

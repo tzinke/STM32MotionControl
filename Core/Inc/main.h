@@ -66,6 +66,8 @@ extern "C" {
 
 /* USER CODE END EM */
 
+void HAL_TIM_MspPostInit(TIM_HandleTypeDef *htim);
+
 /* Exported functions prototypes ---------------------------------------------*/
 void Error_Handler(void);
 
@@ -110,8 +112,8 @@ enum motor_phase
 #define RST_GPIO_Port GPIOA
 #define ENABLE_Pin GPIO_PIN_10
 #define ENABLE_GPIO_Port GPIOA
-#define STCK_MODE3_Pin GPIO_PIN_3
-#define STCK_MODE3_GPIO_Port GPIOB
+#define PWM1_Pin GPIO_PIN_3
+#define PWM1_GPIO_Port GPIOB
 #define MODE1_Pin GPIO_PIN_4
 #define MODE1_GPIO_Port GPIOB
 #define MODE2_Pin GPIO_PIN_6

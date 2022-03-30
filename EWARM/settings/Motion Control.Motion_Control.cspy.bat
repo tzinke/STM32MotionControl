@@ -25,7 +25,7 @@ if not "%~1" == "" goto debugFile
 
 @echo on 
 
-"C:\Program Files\IAR Systems\Embedded Workbench 9.0\common\bin\cspybat" -f "C:\Users\tzinke\Documents\Learning Goals\Motion Control\EWARM\settings\Motion Control.Motion_Control.general.xcl" --backend -f "C:\Users\tzinke\Documents\Learning Goals\Motion Control\EWARM\settings\Motion Control.Motion_Control.driver.xcl" 
+"C:\Program Files\IAR Systems\Embedded Workbench 9.0\common\bin\cspybat" -f "C:\Users\tzinke\Documents\Learning Goals\STM32MotionControl\EWARM\settings\Motion Control.Motion_Control.general.xcl" --backend -f "C:\Users\tzinke\Documents\Learning Goals\STM32MotionControl\EWARM\settings\Motion Control.Motion_Control.driver.xcl" 
 
 @echo off 
 goto end 
@@ -34,7 +34,7 @@ goto end
 
 @echo on 
 
-"C:\Program Files\IAR Systems\Embedded Workbench 9.0\common\bin\cspybat" -f "C:\Users\tzinke\Documents\Learning Goals\Motion Control\EWARM\settings\Motion Control.Motion_Control.general.xcl" "--debug_file=%~1" --backend -f "C:\Users\tzinke\Documents\Learning Goals\Motion Control\EWARM\settings\Motion Control.Motion_Control.driver.xcl" 
+"C:\Program Files\IAR Systems\Embedded Workbench 9.0\common\bin\cspybat" -f "C:\Users\tzinke\Documents\Learning Goals\STM32MotionControl\EWARM\settings\Motion Control.Motion_Control.general.xcl" "--debug_file=%~1" --backend -f "C:\Users\tzinke\Documents\Learning Goals\STM32MotionControl\EWARM\settings\Motion Control.Motion_Control.driver.xcl" 
 
 @echo off 
 :end
