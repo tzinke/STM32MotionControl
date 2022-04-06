@@ -28,3 +28,74 @@
 6	1416	6703560007794686	C:/Users/tzinke/Documents/Learning Goals/STM32MotionControl/EWARM/Motion Control/Obj/Application/User/Core/main.o	f828e3306a698a70
 1479	1937	6703560013074684	C:/Users/tzinke/Documents/Learning Goals/STM32MotionControl/EWARM/Motion Control/Exe/Motion Control.out	56d80166b59c439b
 2010	2061	6703560014689706	C:/Users/tzinke/Documents/Learning Goals/STM32MotionControl/EWARM/Motion Control/Exe/Motion Control.hex	259192c0d67b201a
+23	2038	6703564566049431	C:/Users/tzinke/Documents/Learning Goals/STM32MotionControl/EWARM/Motion Control/Obj/Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_cortex.o	ade4d8c5afce0e51
+51	2113	6703564566779842	C:/Users/tzinke/Documents/Learning Goals/STM32MotionControl/EWARM/Motion Control/Obj/Application/User/Core/main.o	f828e3306a698a70
+6	2476	6703564570432874	C:/Users/tzinke/Documents/Learning Goals/STM32MotionControl/EWARM/Motion Control/Obj/Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_dma_ex.o	adf48244d136de4f
+2052	2595	6703564571600360	C:/Users/tzinke/Documents/Learning Goals/STM32MotionControl/EWARM/Motion Control/Obj/Drivers/CMSIS/system_stm32f4xx.o	3ad0f7b482551554
+39	2623	6703564571683011	C:/Users/tzinke/Documents/Learning Goals/STM32MotionControl/EWARM/Motion Control/Obj/Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_dma.o	f8cc204daf5a65a0
+2130	2680	6703564572459083	C:/Users/tzinke/Documents/Learning Goals/STM32MotionControl/EWARM/Motion Control/Obj/Application/User/Core/stm32f4xx_it.o	104ac8576baace00
+2641	3136	6703564577013407	C:/Users/tzinke/Documents/Learning Goals/STM32MotionControl/EWARM/Motion Control/Obj/Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_flash_ramfunc.o	843c00f20c9bc604
+2494	3200	6703564577429754	C:/Users/tzinke/Documents/Learning Goals/STM32MotionControl/EWARM/Motion Control/Obj/Application/User/Core/stm32f4xx_hal_msp.o	501246279553d24e
+2610	3230	6703564577783478	C:/Users/tzinke/Documents/Learning Goals/STM32MotionControl/EWARM/Motion Control/Obj/Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal.o	670a089670d109d7
+2694	3319	6703564578828443	C:/Users/tzinke/Documents/Learning Goals/STM32MotionControl/EWARM/Motion Control/Obj/Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_exti.o	69f113108972d0a7
+3249	3858	6703564584206835	C:/Users/tzinke/Documents/Learning Goals/STM32MotionControl/EWARM/Motion Control/Obj/Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_pwr.o	f44d9e47c270fa9f
+3153	4024	6703564585857089	C:/Users/tzinke/Documents/Learning Goals/STM32MotionControl/EWARM/Motion Control/Obj/Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_gpio.o	c75c8a87a24f3225
+3217	4068	6703564586071818	C:/Users/tzinke/Documents/Learning Goals/STM32MotionControl/EWARM/Motion Control/Obj/Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_flash.o	43b11bedb7c67eac
+3337	4164	6703564587300262	C:/Users/tzinke/Documents/Learning Goals/STM32MotionControl/EWARM/Motion Control/Obj/Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_flash_ex.o	e02cb84ebefe95a4
+4083	4688	6703564592522200	C:/Users/tzinke/Documents/Learning Goals/STM32MotionControl/EWARM/Motion Control/Obj/Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_pwr_ex.o	289586abd14d574f
+4040	4873	6703564594336820	C:/Users/tzinke/Documents/Learning Goals/STM32MotionControl/EWARM/Motion Control/Obj/Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_rcc_ex.o	fe38136d4ac5d896
+4890	5951	6703564605162780	C:/Users/tzinke/Documents/Learning Goals/STM32MotionControl/EWARM/Motion Control/Obj/Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_rcc.o	d1afcc7232f0d102
+4177	6513	6703564610740029	C:/Users/tzinke/Documents/Learning Goals/STM32MotionControl/EWARM/Motion Control/Obj/Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_tim_ex.o	a067051388102536
+4705	7270	6703564618311439	C:/Users/tzinke/Documents/Learning Goals/STM32MotionControl/EWARM/Motion Control/Obj/Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_uart.o	e1178550e20b4106
+3874	10463	6703564649840799	C:/Users/tzinke/Documents/Learning Goals/STM32MotionControl/EWARM/Motion Control/Obj/Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_tim.o	7a0a15acdede8829
+5	622	6703565250813291	C:/Users/tzinke/Documents/Learning Goals/STM32MotionControl/EWARM/Motion Control/Obj/Application/User/Core/main.o	f828e3306a698a70
+637	850	6703565253109805	C:/Users/tzinke/Documents/Learning Goals/STM32MotionControl/EWARM/Motion Control/Exe/Motion Control.out	56d80166b59c439b
+892	957	6703565254358967	C:/Users/tzinke/Documents/Learning Goals/STM32MotionControl/EWARM/Motion Control/Exe/Motion Control.hex	259192c0d67b201a
+5	804	6703566382001333	C:/Users/tzinke/Documents/Learning Goals/STM32MotionControl/EWARM/Motion Control/Obj/Application/User/Core/main.o	f828e3306a698a70
+818	1090	6703566384871517	C:/Users/tzinke/Documents/Learning Goals/STM32MotionControl/EWARM/Motion Control/Exe/Motion Control.out	56d80166b59c439b
+1135	1198	6703566386143831	C:/Users/tzinke/Documents/Learning Goals/STM32MotionControl/EWARM/Motion Control/Exe/Motion Control.hex	259192c0d67b201a
+5	1195	6703567764910410	C:/Users/tzinke/Documents/Learning Goals/STM32MotionControl/EWARM/Motion Control/Obj/Application/User/Core/main.o	f828e3306a698a70
+1207	1395	6703567766918709	C:/Users/tzinke/Documents/Learning Goals/STM32MotionControl/EWARM/Motion Control/Exe/Motion Control.out	56d80166b59c439b
+1438	1491	6703567768039310	C:/Users/tzinke/Documents/Learning Goals/STM32MotionControl/EWARM/Motion Control/Exe/Motion Control.hex	259192c0d67b201a
+3	264	6703571124781329	C:/Users/tzinke/Documents/Learning Goals/STM32MotionControl/EWARM/Motion Control/Obj/Application/User/Core/main.o	f828e3306a698a70
+271	366	6703571125815926	C:/Users/tzinke/Documents/Learning Goals/STM32MotionControl/EWARM/Motion Control/Exe/Motion Control.out	56d80166b59c439b
+383	406	6703571126294646	C:/Users/tzinke/Documents/Learning Goals/STM32MotionControl/EWARM/Motion Control/Exe/Motion Control.hex	259192c0d67b201a
+3	590	6703574330327982	C:/Users/tzinke/Documents/Learning Goals/STM32MotionControl/EWARM/Motion Control/Obj/Application/User/Core/main.o	f828e3306a698a70
+597	687	6703574331345418	C:/Users/tzinke/Documents/Learning Goals/STM32MotionControl/EWARM/Motion Control/Exe/Motion Control.out	56d80166b59c439b
+703	725	6703574331795612	C:/Users/tzinke/Documents/Learning Goals/STM32MotionControl/EWARM/Motion Control/Exe/Motion Control.hex	259192c0d67b201a
+3	297	6703575245646837	C:/Users/tzinke/Documents/Learning Goals/STM32MotionControl/EWARM/Motion Control/Obj/Application/User/Core/main.o	f828e3306a698a70
+303	388	6703575246584728	C:/Users/tzinke/Documents/Learning Goals/STM32MotionControl/EWARM/Motion Control/Exe/Motion Control.out	56d80166b59c439b
+404	424	6703575247013173	C:/Users/tzinke/Documents/Learning Goals/STM32MotionControl/EWARM/Motion Control/Exe/Motion Control.hex	259192c0d67b201a
+1	255	6703576621526698	C:/Users/tzinke/Documents/Learning Goals/STM32MotionControl/EWARM/Motion Control/Obj/Application/User/Core/main.o	f828e3306a698a70
+260	352	6703576622513732	C:/Users/tzinke/Documents/Learning Goals/STM32MotionControl/EWARM/Motion Control/Exe/Motion Control.out	56d80166b59c439b
+367	388	6703576622952538	C:/Users/tzinke/Documents/Learning Goals/STM32MotionControl/EWARM/Motion Control/Exe/Motion Control.hex	259192c0d67b201a
+2	265	6703577079969020	C:/Users/tzinke/Documents/Learning Goals/STM32MotionControl/EWARM/Motion Control/Obj/Application/User/Core/main.o	f828e3306a698a70
+271	361	6703577080927068	C:/Users/tzinke/Documents/Learning Goals/STM32MotionControl/EWARM/Motion Control/Exe/Motion Control.out	56d80166b59c439b
+377	398	6703577081385845	C:/Users/tzinke/Documents/Learning Goals/STM32MotionControl/EWARM/Motion Control/Exe/Motion Control.hex	259192c0d67b201a
+5	3277	6705263694725200	C:/Users/tzinke/Documents/Learning Goals/STM32MotionControl/EWARM/Motion Control/Obj/Application/User/Core/main.o	f828e3306a698a70
+3343	4591	6705263708017790	C:/Users/tzinke/Documents/Learning Goals/STM32MotionControl/EWARM/Motion Control/Exe/Motion Control.out	56d80166b59c439b
+4642	4746	6705263709946146	C:/Users/tzinke/Documents/Learning Goals/STM32MotionControl/EWARM/Motion Control/Exe/Motion Control.hex	259192c0d67b201a
+5	1137	6705264208959860	C:/Users/tzinke/Documents/Learning Goals/STM32MotionControl/EWARM/Motion Control/Obj/Application/User/Core/main.o	f828e3306a698a70
+1155	1582	6705264213360702	C:/Users/tzinke/Documents/Learning Goals/STM32MotionControl/EWARM/Motion Control/Exe/Motion Control.out	56d80166b59c439b
+1656	1701	6705264214983701	C:/Users/tzinke/Documents/Learning Goals/STM32MotionControl/EWARM/Motion Control/Exe/Motion Control.hex	259192c0d67b201a
+7	1302	6705273553221675	C:/Users/tzinke/Documents/Learning Goals/STM32MotionControl/EWARM/Motion Control/Obj/Application/User/Core/main.o	f828e3306a698a70
+1325	1547	6705273555750598	C:/Users/tzinke/Documents/Learning Goals/STM32MotionControl/EWARM/Motion Control/Exe/Motion Control.out	56d80166b59c439b
+1589	1635	6705273556837685	C:/Users/tzinke/Documents/Learning Goals/STM32MotionControl/EWARM/Motion Control/Exe/Motion Control.hex	259192c0d67b201a
+3	1281	6705277455435816	C:/Users/tzinke/Documents/Learning Goals/STM32MotionControl/EWARM/Motion Control/Obj/Application/User/Core/main.o	f828e3306a698a70
+1295	1527	6705277457981445	C:/Users/tzinke/Documents/Learning Goals/STM32MotionControl/EWARM/Motion Control/Exe/Motion Control.out	56d80166b59c439b
+1562	1604	6705277458879105	C:/Users/tzinke/Documents/Learning Goals/STM32MotionControl/EWARM/Motion Control/Exe/Motion Control.hex	259192c0d67b201a
+3	747	6707910154150341	C:/Users/tzinke/Documents/Learning Goals/STM32MotionControl/EWARM/Motion Control/Obj/Application/User/Core/main.o	f828e3306a698a70
+759	1001	6707910156688367	C:/Users/tzinke/Documents/Learning Goals/STM32MotionControl/EWARM/Motion Control/Exe/Motion Control.out	56d80166b59c439b
+1035	1083	6707910157645480	C:/Users/tzinke/Documents/Learning Goals/STM32MotionControl/EWARM/Motion Control/Exe/Motion Control.hex	259192c0d67b201a
+4	765	6707913662553782	C:/Users/tzinke/Documents/Learning Goals/STM32MotionControl/EWARM/Motion Control/Obj/Application/User/Core/main.o	f828e3306a698a70
+777	940	6707913664335589	C:/Users/tzinke/Documents/Learning Goals/STM32MotionControl/EWARM/Motion Control/Exe/Motion Control.out	56d80166b59c439b
+973	1021	6707913665234405	C:/Users/tzinke/Documents/Learning Goals/STM32MotionControl/EWARM/Motion Control/Exe/Motion Control.hex	259192c0d67b201a
+2	803	6707918932384161	C:/Users/tzinke/Documents/Learning Goals/STM32MotionControl/EWARM/Motion Control/Obj/Application/User/Core/main.o	f828e3306a698a70
+814	968	6707918934039004	C:/Users/tzinke/Documents/Learning Goals/STM32MotionControl/EWARM/Motion Control/Exe/Motion Control.out	56d80166b59c439b
+1001	1049	6707918934995323	C:/Users/tzinke/Documents/Learning Goals/STM32MotionControl/EWARM/Motion Control/Exe/Motion Control.hex	259192c0d67b201a
+2	565	6709737088437269	C:/Users/tzinke/Documents/Learning Goals/STM32MotionControl/EWARM/Motion Control/Obj/Application/User/Core/main.o	f828e3306a698a70
+570	688	6709737089697114	C:/Users/tzinke/Documents/Learning Goals/STM32MotionControl/EWARM/Motion Control/Exe/Motion Control.out	56d80166b59c439b
+705	730	6709737090196079	C:/Users/tzinke/Documents/Learning Goals/STM32MotionControl/EWARM/Motion Control/Exe/Motion Control.hex	259192c0d67b201a
+1	298	6709737140402636	C:/Users/tzinke/Documents/Learning Goals/STM32MotionControl/EWARM/Motion Control/Obj/Application/User/Core/main.o	f828e3306a698a70
+306	422	6709737141678054	C:/Users/tzinke/Documents/Learning Goals/STM32MotionControl/EWARM/Motion Control/Exe/Motion Control.out	56d80166b59c439b
+437	461	6709737142147379	C:/Users/tzinke/Documents/Learning Goals/STM32MotionControl/EWARM/Motion Control/Exe/Motion Control.hex	259192c0d67b201a

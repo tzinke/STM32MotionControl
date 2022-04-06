@@ -22,12 +22,10 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-#define TIM2PSC  19999  // SysClk 84MHz; 20000 PSC == 4.2KHz
-#define STEPPERIOD      100
-#define TEMPSPEEDSCALER 6300
-#define PHASEDIV        20
-
-#define TIM2ARRaddr *(uint32_t *) 0x4000002C
+#define TIM2PSCVal  19999  // SysClk 84MHz; 20000 PSC == 4.2KHz
+#define TIM2BaseAddr 0x40000000
+#define TIM2CNTReg *(uint32_t *) (TIM2BaseAddr + 0x24)
+#define TIM2ARRReg *(uint32_t *) (TIM2BaseAddr + 0x2C)
 
 const float bellCurve[] = { 0, 0.0398, 0.0793, 0.1179, 0.1554, 0.1915, 0.2257, 0.258, 0.2881, 0.3159, 0.3413,
                       0.3643, 0.3849, 0.4032, 0.4192, 0.4332, 0.4452, 0.4554, 0.4641, 0.4713, 0.4772,
@@ -57,11 +55,6 @@ TIM_HandleTypeDef htim3;
 UART_HandleTypeDef huart2;
 
 /* USER CODE BEGIN PV */
- static uint8_t phase;
- static uint8_t step_index;
- 
- uint8_t mode_value[8];
-
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -71,7 +64,6 @@ static void MX_TIM2_Init(void);
 static void MX_USART2_UART_Init(void);
 static void MX_TIM3_Init(void);
 /* USER CODE BEGIN PFP */
-void init_mode_values();
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
@@ -110,7 +102,6 @@ int main(void)
   MX_USART2_UART_Init();
   MX_TIM3_Init();
   /* USER CODE BEGIN 2 */
-  init_mode_values();
   HAL_TIM_Base_Start_IT(&htim2);
   HAL_TIM_Base_Start_IT(&htim3);
   HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_2);
@@ -193,9 +184,9 @@ static void MX_TIM2_Init(void)
 
   /* USER CODE END TIM2_Init 1 */
   htim2.Instance = TIM2;
-  htim2.Init.Prescaler = TIM2PSC;//1343;
+  htim2.Init.Prescaler = 19999;
   htim2.Init.CounterMode = TIM_COUNTERMODE_UP;
-  htim2.Init.Period = 50;
+  htim2.Init.Period = 63;
   htim2.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
   htim2.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
   if (HAL_TIM_Base_Init(&htim2) != HAL_OK)
@@ -218,7 +209,7 @@ static void MX_TIM2_Init(void)
     Error_Handler();
   }
   sConfigOC.OCMode = TIM_OCMODE_PWM1;
-  sConfigOC.Pulse = 5;//STEPPERIOD / 2;
+  sConfigOC.Pulse = 1;
   sConfigOC.OCPolarity = TIM_OCPOLARITY_HIGH;
   sConfigOC.OCFastMode = TIM_OCFAST_DISABLE;
   if (HAL_TIM_PWM_ConfigChannel(&htim2, &sConfigOC, TIM_CHANNEL_2) != HAL_OK)
@@ -253,7 +244,7 @@ static void MX_TIM3_Init(void)
   htim3.Instance = TIM3;
   htim3.Init.Prescaler = 1343;
   htim3.Init.CounterMode = TIM_COUNTERMODE_UP;
-  htim3.Init.Period = 3124;
+  htim3.Init.Period = 12496;//3124;
   htim3.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
   htim3.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
   if (HAL_TIM_Base_Init(&htim3) != HAL_OK)
@@ -381,11 +372,12 @@ uint16_t myPWMPer = 100;
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef* htim)
 {  
     static uint16_t PWMTableIndex = 0;
-    uint8_t currentInd = PWMTableIndex++ / 25;
+    //uint8_t currentInd = PWMTableIndex++ / 25;
     
-    TIM2ARRaddr = myPWMPer;//PWMTable[currentInd];
+    TIM2ARRReg = PWMTable[PWMTableIndex];
+    TIM2CNTReg = 0;
     
-    if(275 == PWMTableIndex)
+    if(10 == PWMTableIndex++)
     {
         PWMTableIndex = 0;
     }
