@@ -19,19 +19,10 @@
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
+#include <math.h>
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-#define TIM2PSCVal  19999  // SysClk 84MHz; 20000 PSC == 4.2KHz
-#define TIM2BaseAddr 0x40000000
-#define TIM2CNTReg *(uint32_t *) (TIM2BaseAddr + 0x24)
-#define TIM2ARRReg *(uint32_t *) (TIM2BaseAddr + 0x2C)
-
-const float bellCurve[] = { 0, 0.0398, 0.0793, 0.1179, 0.1554, 0.1915, 0.2257, 0.258, 0.2881, 0.3159, 0.3413,
-                      0.3643, 0.3849, 0.4032, 0.4192, 0.4332, 0.4452, 0.4554, 0.4641, 0.4713, 0.4772,
-                      0.4821, 0.4861, 0.4893, 0.4918, 0.4938, 0.4953, 0.4965, 0.4974, 0.4981, 0.4987 };
-
-const uint32_t PWMTable[] = {50, 100, 200, 400, 800, 1600, 3200, 6400, 12800, 25600, 51200};
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -41,6 +32,14 @@ const uint32_t PWMTable[] = {50, 100, 200, 400, 800, 1600, 3200, 6400, 12800, 25
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
+#define TIM2PSCVal  19999  // SysClk 84MHz; 20000 PSC == 4.2KHz
+#define TIM2BaseAddr 0x40000000
+#define TIM2CNTReg *(uint32_t *) (TIM2BaseAddr + 0x24)
+#define TIM2ARRReg *(uint32_t *) (TIM2BaseAddr + 0x2C)
+
+#define MAX_ARR_VAL			  (34) // ARR value of 29 gives 42000/(29+1) = 1400 steps/sec = 400RPM
+#define MAX_TIME			  (3000) //3000 ms of 3 sec
+#define M_PI 3.14159265358979323846
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -49,12 +48,23 @@ const uint32_t PWMTable[] = {50, 100, 200, 400, 800, 1600, 3200, 6400, 12800, 25
 /* USER CODE END PM */
 
 /* Private variables ---------------------------------------------------------*/
+/* USER CODE BEGIN PV */
 TIM_HandleTypeDef htim2;
 TIM_HandleTypeDef htim3;
 
 UART_HandleTypeDef huart2;
 
-/* USER CODE BEGIN PV */
+static double* x_values; // array for x axis
+static double* y_values; // array for calculated y axis values
+static double arrLookupTable[121]; // array for calculated arr-value from y axis
+
+static double max_y; // max value of y axis array
+static uint8_t max_y_index; // index of max y value
+static double max_x; // corresponding x value of max y value
+static uint8_t num_of_values; // total number of values on y axis
+
+static uint8_t phase;
+static uint8_t step_index;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -63,6 +73,11 @@ static void MX_GPIO_Init(void);
 static void MX_TIM2_Init(void);
 static void MX_USART2_UART_Init(void);
 static void MX_TIM3_Init(void);
+
+static double pdf(double x);
+static void update_max_values(double x_min, double x_max, double step);
+static void generate_bell_curve(double x_min, double x_max, double step);
+static double CalculateARRVal(double y);
 /* USER CODE BEGIN PFP */
 /* USER CODE END PFP */
 
@@ -102,6 +117,9 @@ int main(void)
   MX_USART2_UART_Init();
   MX_TIM3_Init();
   /* USER CODE BEGIN 2 */
+  update_max_values(-2.925, 2.925, 0.048347);
+  generate_bell_curve(-2.925, 2.925, 0.048347);
+  
   HAL_TIM_Base_Start_IT(&htim2);
   HAL_TIM_Base_Start_IT(&htim3);
   HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_2);
@@ -184,7 +202,7 @@ static void MX_TIM2_Init(void)
 
   /* USER CODE END TIM2_Init 1 */
   htim2.Instance = TIM2;
-  htim2.Init.Prescaler = 19999;
+  htim2.Init.Prescaler = 1999;
   htim2.Init.CounterMode = TIM_COUNTERMODE_UP;
   htim2.Init.Period = 63;
   htim2.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
@@ -244,7 +262,7 @@ static void MX_TIM3_Init(void)
   htim3.Instance = TIM3;
   htim3.Init.Prescaler = 1343;
   htim3.Init.CounterMode = TIM_COUNTERMODE_UP;
-  htim3.Init.Period = 12496;//3124;
+  htim3.Init.Period = 3124;
   htim3.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
   htim3.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
   if (HAL_TIM_Base_Init(&htim3) != HAL_OK)
@@ -364,25 +382,126 @@ static void MX_GPIO_Init(void)
 
 }
 
-/* USER CODE BEGIN 4 */
-//volatile uint16_t PWMTableIndex = 0;
-uint16_t myPWMPer = 100;
+double pdf(double x)
+{
+    //default mean = 0  , sigma = 1
+    double mean = 0;
+    double sigma = 1;
+    double y = 0;
 
-// Also need to change duty cycle probably
+    y = ((1.0 / (sigma * (sqrt(2.0 * M_PI)))) * (exp((-(pow((x - mean), 2))) / (2 * pow(sigma, 2)))));
+    return y;
+}
+
+void update_max_values(double x_min, double x_max, double step)
+{
+    double x = x_min;
+    double y = 0;
+    int c = 0;
+    uint8_t found_max = 0;
+    double prev_c = 0;
+    double prev_x = 0;
+    double prev_y = 0;
+    double diff = 0;
+
+    while (x <= x_max)
+    {
+        y = pdf(x);
+
+        if (c == 0)
+        {
+            prev_c = c;
+            prev_x = x;
+            prev_y = y;
+        }
+
+        diff = y - prev_y;
+
+        if ((diff < 0) && (found_max == 0))
+        {
+            max_y_index = prev_c;
+            max_x = prev_x;
+            max_y = prev_y;
+            found_max = 1;
+        }
+        else
+        {
+            prev_c = c;
+            prev_x = x;
+            prev_y = y;
+        }
+
+        c = c + 1;
+        x = x + step;
+
+    }
+    num_of_values = c;
+}
+
+void generate_bell_curve(double x_min, double x_max, double step)
+{
+    uint8_t i = 0;
+    double x = x_min;
+    double y = 0;
+    double arrVal = 0;
+
+    while (x <= x_max)
+    {
+        memcpy(&x_values[i], &x, sizeof(double));
+        y = pdf(x);
+
+        memcpy(&y_values[i], &y, sizeof(double));
+
+        arrVal = CalculateARRVal(y);
+        arrLookupTable[i] = arrVal;
+        x = x + step;
+        ++i;
+    }
+}
+
+//Steps/sec = PWM_CLK_FREQ / (ARR + 1)
+//  42000 / (ARR + 1)
+//MAX_ARR_VAL = 34 = 1200 steps / sec = 360 RPM
+
+double CalculateARRVal(double y)
+{
+    //The ARR value will increase as the bell-curve decreases.
+    //Need to scale the arr value proportional to bell[x]/bell_max, but
+    //  the shape must be inverted to get inverse relation of bell to arr.
+    double arrVal = (MAX_ARR_VAL * (max_y / y)); // scaled by bell_max/bell[x] for inverted relation
+    return arrVal;
+}
+
+/* USER CODE BEGIN 4 */
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef* htim)
 {  
-    static uint16_t PWMTableIndex = 0;
-    //uint8_t currentInd = PWMTableIndex++ / 25;
-    
-    TIM2ARRReg = PWMTable[PWMTableIndex];
+    static uint16_t tickCount50ms = 0;
+    static uint16_t arrTableIndex = 0;
+
+    uint16_t newArrVal = 0;
+
+    if(60 > tickCount50ms++) // First 3 seconds AKA ramp-up stage
+    {
+        newArrVal = (uint16_t)arrLookupTable[arrTableIndex++];
+    }
+    else if(120 > tickCount50ms) // Middle 3 seconds AKA full-speed stage
+    {
+        newArrVal = (uint16_t)arrLookupTable[max_y_index];
+    }
+    else if(180 > tickCount50ms) // Remaining 3 seconds AKA ramp-down stage
+    {
+        newArrVal = (uint16_t)arrLookupTable[arrTableIndex++];
+    }
+    else if (200 == tickCount50ms) // One-second break in between to distinguish start/end
+    {
+        arrTableIndex = tickCount50ms = 0;
+    }
+
+    //This is where the PWM period is updated
+    TIM2ARRReg = newArrVal;
     TIM2CNTReg = 0;
     
-    if(10 == PWMTableIndex++)
-    {
-        PWMTableIndex = 0;
-    }
-    
-    HAL_GPIO_TogglePin(GPIOA, GRN_LED_Pin);
+    HAL_GPIO_TogglePin(GPIOA, GRN_LED_Pin); //Toggle on-board LED
 }
 
 /* USER CODE END 4 */
